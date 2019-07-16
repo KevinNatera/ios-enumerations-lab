@@ -9,8 +9,9 @@ a) Define an enumeration called `iOSDeviceType` with member values `iPhone`, `iP
 
 b) Adjust your code above so that `iPhone` and `iPad` have associated values of type String which represents the model number, eg: `iPhone("6 Plus")`. Use a switch case and let syntax to print out the model number of each device.
 
+```
 //a
-```swift
+
 
 enum IosDeviceType {
  case iPhone(String)
@@ -21,10 +22,10 @@ enum IosDeviceType {
 var myDevice = IosDeviceType.iWatch
 
 print(myDevice)
-```
+
 
 //b
-```
+
 var iPhoneDetails = IosDeviceType.iPhone("6")
 var iPadDetails = IosDeviceType.iPad("Mini 5")
 
@@ -52,9 +53,9 @@ b) Write a method inside `Shape` that returns how many sides the shape has. Crea
 
 c) Re-write `Shape` so that each case has an associated value of type Int that will represent the length of the sides (assume the shapes are regular polygons so all the sides are the same length) and write a method inside that returns the perimeter of the shape.
 
-
-//a
 ```
+//a
+
 //enum Shape: Int {
 //    case triangle = 3
 //    case square = 4
@@ -62,14 +63,14 @@ c) Re-write `Shape` so that each case has an associated value of type Int that w
 //    case pentagon = 5
 //    case hexagon = 6
 //}
-```
+
 //b
-```
+
 //var myFavoritePolygon = Shape.hexagon.rawValue
 //print(myFavoritePolygon)
-```
+
 //c
-```
+
 enum Shape {
  case triangle (Int)
  case square (Int)
@@ -142,9 +143,7 @@ enum Direction {
 var location = (x: 0, y: 0)
 var steps: [Direction] = [.up, .up, .left, .down, .left]
 
-// your code here
-```
-```
+
 enum Direction {
  case up
  case down
@@ -183,26 +182,26 @@ c) Write a function called `match` that takes two `HandShapes` and returns a `Ma
 
 Hint: Rock beats scissors, paper beats rock, scissor beats paper
 
-
-//a
 ```
+//a
+
 enum HandShape {
  case rock
  case paper
  case scissors
 }
-```
+
 
 //b
-```
+
 enum MatchResult {
  case win
  case draw
  case lose
 }
-```
+
 //c
-```
+
 func match(firstPlayer: HandShape, secondPlayer: HandShape) -> MatchResult {
  switch firstPlayer {
   case .rock:
@@ -265,9 +264,9 @@ var moneyArray:[(Int,CoinType)] = [(10,.penny),
 
 b) Write a method in the `CoinType` enum that returns an Int representing how many coins of that type you need to have a dollar. Then, create an instance of `CoinType` set to `.nickle` and use your method to print out how many nickels you need to have to make a dollar.
 
-
-//a
 ```
+//a
+
 var total = 0
 
 for i in moneyArray {
@@ -275,10 +274,10 @@ total += i.0 * i.1.rawValue
 }
 
 print("There are \(total) cents total")
-```
+
 
 //b
-```
+
 enum CoinType2 {
  case penny
  case nickle
@@ -314,9 +313,9 @@ b) Given the array `poorlyFormattedDays`, write code that will produce an array 
 
 c) Write a method in `DayOfWeek` called `isWeekend` that determines whether a day is part of the weekend or not and write code to calculate how many week days appear in `poorlyFormattedDays`.
 
-
-//a
 ```
+//a
+
 enum DaysOfTheWeek: String {
  case monday = "monday"
  case tuesday = "tuesday"
@@ -336,8 +335,9 @@ b) Modify your enum so that each case has an associated value of either Characte
 
 c) Write code that prints the train letter or number of your instance of `MetroLine`.
 
-//a & b
 ```
+//a & b
+
 enum MetroLines {
  case red (Int)
  case green (Int)
@@ -347,10 +347,10 @@ enum MetroLines {
 }
 
 var myTrain = MetroLines.green(4)
-```
+
 
 //c
-```
+
 switch myTrain {
  case .red(let number):
   print(number)
