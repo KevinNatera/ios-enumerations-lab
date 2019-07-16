@@ -10,6 +10,7 @@ a) Define an enumeration called `iOSDeviceType` with member values `iPhone`, `iP
 b) Adjust your code above so that `iPhone` and `iPad` have associated values of type String which represents the model number, eg: `iPhone("6 Plus")`. Use a switch case and let syntax to print out the model number of each device.
 
 //a
+```swift
 
 enum IosDeviceType {
  case iPhone(String)
@@ -20,9 +21,10 @@ enum IosDeviceType {
 var myDevice = IosDeviceType.iWatch
 
 print(myDevice)
+```
 
 //b
-
+```
 var iPhoneDetails = IosDeviceType.iPhone("6")
 var iPadDetails = IosDeviceType.iPad("Mini 5")
 
@@ -40,7 +42,7 @@ switch iPadDetails {
  default:
   print("")
 }
-
+```
 
 ## Question 2
 
@@ -50,7 +52,9 @@ b) Write a method inside `Shape` that returns how many sides the shape has. Crea
 
 c) Re-write `Shape` so that each case has an associated value of type Int that will represent the length of the sides (assume the shapes are regular polygons so all the sides are the same length) and write a method inside that returns the perimeter of the shape.
 
+
 //a
+```
 //enum Shape: Int {
 //    case triangle = 3
 //    case square = 4
@@ -58,14 +62,14 @@ c) Re-write `Shape` so that each case has an associated value of type Int that w
 //    case pentagon = 5
 //    case hexagon = 6
 //}
-
+```
 //b
-
+```
 //var myFavoritePolygon = Shape.hexagon.rawValue
 //print(myFavoritePolygon)
-
+```
 //c
-
+```
 enum Shape {
  case triangle (Int)
  case square (Int)
@@ -91,11 +95,12 @@ case .hexagon(let length):
 
 var lengthOfMyFavoritePolygon = Shape.hexagon(13).findPerimeter()
 print(lengthOfMyFavoritePolygon)
-
+```
 ## Question 3
 
 Write an enum called `OperatingSystem` and give it cases for `windows`, `mac`, and `linux`. Create an array of 10 `OperatingSystem` objects where each one is set to a random operating system. Then, iterate through the array and print out a message depending on the operating system.
 
+```
 enum OperatingSystem {
  case windows
  case mac
@@ -114,6 +119,7 @@ for i in osArray {
    print("Linux")
  }
 }
+```
 
 ## Question 4
 
@@ -137,6 +143,7 @@ var location = (x: 0, y: 0)
 var steps: [Direction] = [.up, .up, .left, .down, .left]
 
 // your code here
+```
 ```
 enum Direction {
  case up
@@ -164,6 +171,7 @@ for i in steps {
 }
 
 print(location)
+```
 
 ## Question 5
 
@@ -177,20 +185,24 @@ Hint: Rock beats scissors, paper beats rock, scissor beats paper
 
 
 //a
+```
 enum HandShape {
  case rock
  case paper
  case scissors
 }
+```
 
 //b
+```
 enum MatchResult {
  case win
  case draw
  case lose
 }
-
+```
 //c
+```
 func match(firstPlayer: HandShape, secondPlayer: HandShape) -> MatchResult {
  switch firstPlayer {
   case .rock:
@@ -227,7 +239,7 @@ var hero = HandShape.scissors
 var villain = HandShape.paper
 
 print(match(firstPlayer: hero, secondPlayer: villain))
-
+```
 
 
 ## Question 6
@@ -249,13 +261,13 @@ var moneyArray:[(Int,CoinType)] = [(10,.penny),
                                    (3,.dime),
                                    (7,.quarter)]
 
-// your code here
 ```
 
 b) Write a method in the `CoinType` enum that returns an Int representing how many coins of that type you need to have a dollar. Then, create an instance of `CoinType` set to `.nickle` and use your method to print out how many nickels you need to have to make a dollar.
 
 
 //a
+```
 var total = 0
 
 for i in moneyArray {
@@ -263,10 +275,10 @@ total += i.0 * i.1.rawValue
 }
 
 print("There are \(total) cents total")
-
+```
 
 //b
-
+```
 enum CoinType2 {
  case penny
  case nickle
@@ -290,6 +302,7 @@ func coinsToMakeADollar(coin:CoinType2) -> Int {
 var nickle = CoinType2.nickle
 
 print(nickle.coinsToMakeADollar(coin: nickle))
+```
 
 ## Question 7
 
@@ -303,7 +316,7 @@ c) Write a method in `DayOfWeek` called `isWeekend` that determines whether a da
 
 
 //a
-
+```
 enum DaysOfTheWeek: String {
  case monday = "monday"
  case tuesday = "tuesday"
@@ -313,7 +326,7 @@ enum DaysOfTheWeek: String {
  case saturday = "saturday"
  case sunday = "sunday"
 }
-
+```
 
 ## Question 8
 
@@ -324,6 +337,7 @@ b) Modify your enum so that each case has an associated value of either Characte
 c) Write code that prints the train letter or number of your instance of `MetroLine`.
 
 //a & b
+```
 enum MetroLines {
  case red (Int)
  case green (Int)
@@ -333,8 +347,10 @@ enum MetroLines {
 }
 
 var myTrain = MetroLines.green(4)
+```
 
 //c
+```
 switch myTrain {
  case .red(let number):
   print(number)
@@ -347,7 +363,7 @@ switch myTrain {
  case .yellow(let char):
   print(char)
 }
-
+```
 
 ## Question 9
 
@@ -355,7 +371,7 @@ a) Think of your own example of something that can be modeled as an enum and wri
 
 b) Add a method to your enum.... try to have the method make sense.
 
-
+```
 enum Substances {
  case alcohol
  case blueSky
@@ -379,3 +395,4 @@ func checkSafety() -> Bool {
 var isMaryJaneSafe = Substances.devilsLettuce.checkSafety()
 
 print(isMaryJaneSafe)
+```
